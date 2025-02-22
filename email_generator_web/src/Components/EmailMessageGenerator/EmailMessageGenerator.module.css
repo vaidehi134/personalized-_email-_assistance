@@ -1,0 +1,150 @@
+.container {
+  background-color: #112240;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  width: 700px;
+  /* max-width: 28rem; */
+  margin: 2rem auto;
+  color: #ffffff;
+}
+
+.container label {
+  background-color: #112240;
+}
+
+.title {
+  color: #007bff;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  background-color: #112240;
+}
+
+.inputField {
+  width: 96%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  background-color: #112240;
+  color: white;
+  border: 1px solid #007bff;
+  border-radius: 0.25rem;
+}
+
+.flexRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  background-color: #112240;
+  gap: 10px;
+  max-width: 99%;
+}
+
+.select {
+  margin-top: -0.5rem;
+  margin-right: 10px; /* Space between select and button */
+  padding: 6px;
+  color: white;
+  border: 1px solid #007bff;
+  background-color: #112240;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.backButton {
+  width: 680px;
+  height: 30px;
+  margin-left: 17px;
+  border-radius: 0.25rem;
+  background-color: #007bff;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.25rem;
+}
+
+.button {
+  width: 700px;
+  padding: 0.5rem;
+  background-color: #007bff;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-bottom: 15px;
+}
+
+.button:hover {
+  background-color: #007bff;
+}
+
+.button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.outputContainer {
+  margin-top: 2rem;
+  background-color: #112240;
+  width: 97%;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 10px;
+  margin-top: 1rem;
+  background-color: #112240;
+}
+
+.outputContainer h2 {
+  background-color: #112240;
+  color: #007bff;
+  margin-left: 260px;
+}
+
+.textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  background-color: #112240;
+  color: white;
+  border: 1px solid #007bff;
+  border-radius: 0.25rem;
+}
+
+.scheduleContainer {
+  margin-top: 2rem;
+  background-color: #112240;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  width: 690px;
+}
+
+.scheduleContainer h2 {
+  margin-left: -20px;
+  text-align: center;
+  background-color: #112240;
+}
+
+.scheduleContainer button {
+  width: 680px;
+}
+
+.scheduleField {
+  margin-bottom: 1rem;
+  background-color: #112240;
+}
+
+.scheduleField label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: white;
+  background-color: #112240;
+}
