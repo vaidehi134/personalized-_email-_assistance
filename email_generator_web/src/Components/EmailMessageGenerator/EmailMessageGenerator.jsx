@@ -12,7 +12,9 @@ const EmailMessageGenerator = () => {
   const [scheduledTime, setScheduledTime] = useState("");
   const [generatedReply, setGeneratedReply] = useState("");
   const [loading, setLoading] = useState(false);
+  const [loadingSchedule, setLoadingSchedule] = useState(false);
   const [error, setError] = useState("");
+  const [customReply, setCustomReply] = useState(""); // State for custom reply
 
   const navigate = useNavigate();
 
@@ -25,6 +27,7 @@ const EmailMessageGenerator = () => {
     setSubject("");
     setScheduledTime("");
     setError("");
+    setCustomReply(""); // Clear custom reply
   };
 
   const handleGenerate = async () => {
@@ -56,14 +59,14 @@ const EmailMessageGenerator = () => {
   };
 
   const handleSchedule = async () => {
-    setLoading(true);
+    setLoadingSchedule(true);
     setError("");
 
     try {
       console.log("Scheduling with payload:", {
         to,
         subject,
-        generatedReply,
+        customReply, // Use custom reply if provided
         scheduledTime,
       });
       const response = await axios.post(
@@ -71,7 +74,7 @@ const EmailMessageGenerator = () => {
         {
           to,
           subject,
-          text: generatedReply,
+          text: customReply || generatedReply, // Use custom reply if provided
           scheduledTime,
         }
       );
@@ -87,6 +90,17 @@ const EmailMessageGenerator = () => {
 
   const handleBackButton = () => {
     navigate("/");
+  };
+
+  const handleCopyToClipboard = () => {
+    navigator.clipboard
+      .writeText(customReply || generatedReply)
+      .then(() => {
+        console.log("copied to clipboard");
+      })
+      .catch((err) => {
+        console.log("error in copy");
+      });
   };
 
   return (
@@ -125,7 +139,7 @@ const EmailMessageGenerator = () => {
           value={tone || ""}
           onChange={(e) => setTone(e.target.value)}
         >
-          <option value="">None</option>
+          <option value="">Tone</option>
           <option value="professional">Professional</option>
           <option value="casual">Casual</option>
           <option value="friendly">Friendly</option>
@@ -148,13 +162,11 @@ const EmailMessageGenerator = () => {
           <textarea
             className={styles.textarea}
             rows="10"
-            value={generatedReply || ""}
+            value={customReply || generatedReply}
+            onChange={(e) => setCustomReply(e.target.value)}
           />
           <div className={styles.buttonGroup}>
-            <button
-              className={styles.button}
-              onClick={() => navigator.clipboard.writeText(generatedReply)}
-            >
+            <button className={styles.button} onClick={handleCopyToClipboard}>
               Copy to Clipboard
             </button>
             <button className={styles.button} onClick={handleNextButton}>
@@ -197,13 +209,13 @@ const EmailMessageGenerator = () => {
               onClick={handleSchedule}
               disabled={!to || !subject || !scheduledTime || loading}
             >
-              {loading ? "Scheduling..." : "Schedule Email"}
+              Schedule Email
             </button>
           </div>
         </div>
       )}
 
-      <button className={styles.backButton} onClick={handleBackButton}>
+      <button className={styles.backHomeButton} onClick={handleBackButton}>
         Back
       </button>
     </div>

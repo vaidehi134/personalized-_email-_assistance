@@ -1,5 +1,7 @@
 package com.email_generator.email_generator.app.service;
 
+import com.email_generator.email_generator.app.model.EmailModel;
+import com.email_generator.email_generator.app.repository.EmailRepository;
 import jakarta.mail.internet.MimeMessage;
 import org.quartz.Job;
 import org.quartz.JobDataMap;
@@ -65,3 +67,5 @@ public class EmailJob implements Job {
         }
     }
 }
+
+

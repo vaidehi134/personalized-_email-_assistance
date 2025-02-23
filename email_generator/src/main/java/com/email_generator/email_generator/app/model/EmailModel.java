@@ -26,3 +26,4 @@ public class EmailModel {
     private LocalDateTime scheduledTime;
 }
 
+

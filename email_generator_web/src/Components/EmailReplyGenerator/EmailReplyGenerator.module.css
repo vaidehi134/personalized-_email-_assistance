@@ -14,11 +14,11 @@
   display: flex;
   gap: 10px; /* Space between buttons */
   margin-top: 1rem;
-   background-color: #112240;
+  background-color: #112240;
 }
 
 .backButton {
-  width: 695px;
+  width: 700px;
   height: 30px;
   margin-left: -2px;
   border-radius: 0.25rem;
@@ -29,6 +29,11 @@
   margin-top: 12px;
 }
 
+.backButton:hover{
+   color: white;
+  border: 1px solid #007bff;
+  background-color: #001a2e;
+}
 .title {
   color: #007bff;
   text-align: center;
@@ -79,17 +84,23 @@
 .button {
   width: 99%;
   padding: 0.5rem;
-  background-color: gray;
+  background-color: #007bff;
   color: black;
   border: none;
   border-radius: 0.25rem;
   cursor: pointer;
 }
 
-.button:disabled {
-  background-color: #555;
-  cursor: not-allowed;
+.button:hover {
+  color: white;
+  border: 1px solid #007bff;
+  background-color: #001a2e;
 }
+/* 
+.button:disabled {
+  background-color: #007bff;
+  cursor: not-allowed;
+} */
 
 .error {
   color: red;

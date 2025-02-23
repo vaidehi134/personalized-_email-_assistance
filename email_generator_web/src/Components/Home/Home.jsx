@@ -7,6 +7,7 @@ const Home = () => {
 
   return (
     <div className={styles.container}>
+      <h1 className={styles.title}>Your Personal Email Assistant </h1>
       <button
         className={styles.button + " " + styles.buttonBlue}
         onClick={() => navigate("/email-reply-generator")}

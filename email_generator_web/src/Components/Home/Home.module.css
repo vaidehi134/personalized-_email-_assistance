@@ -1,32 +1,47 @@
-
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  margin-top: 40px;
+  margin-top: -20px;
   padding-top: 250px;
- 
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2196f3;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: typing 5s steps(50, end) infinite, blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: black }
 }
 
 .button {
-    width: 500px;
-    height: 50px;
+  width: 500px;
+  height: 50px;
   padding: 10px 20px;
   font-size: 16px;
   color: white;
   border: none;
   border-radius: 5px;
-    border: 1px solid #007bff;
+  border: 1px solid #007bff;
   cursor: pointer;
   transition: background-color 0.3s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-
 .button:hover {
-  background-color:#2196f3;
+  background-color: #2196f3;
   color: white;
 }
-
-

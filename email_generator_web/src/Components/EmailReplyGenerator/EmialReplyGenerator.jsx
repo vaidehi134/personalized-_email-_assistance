@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
-import styles from "./EmailReplyGenerator.module.css";
 import { useNavigate } from "react-router-dom";
+import styles from "./EmailReplyGenerator.module.css";
 
 const EmailReplyGenerator = () => {
   const [emailContent, setEmailContent] = useState("");
   const [tone, setTone] = useState(" ");
   const [generatedReply, setGeneratedReply] = useState("");
   const [loading, setLoading] = useState(false);
+  const [loadingScheddule, setLoadingSchedule] = useState(false);
   const [error, setError] = useState("");
   const [to, setTo] = useState("");
   const [subject, setSubject] = useState("");
@@ -56,7 +57,7 @@ const EmailReplyGenerator = () => {
   };
 
   const handleSchedule = async () => {
-    setLoading(true);
+    setLoadingSchedule(true);
     setError("");
 
     try {
@@ -104,7 +105,7 @@ const EmailReplyGenerator = () => {
           value={tone || ""}
           onChange={(e) => setTone(e.target.value)}
         >
-          <option value="">None</option>
+          <option value="">Tone</option>
           <option value="professional">Professional</option>
           <option value="casual">Casual</option>
           <option value="friendly">Friendly</option>
@@ -139,8 +140,11 @@ const EmailReplyGenerator = () => {
               Next
             </button>
           </div>
+                      
+          
         </div>
       )}
+
 
       <div className={styles.scheduleContainer}>
         <h2 className={styles.title}>Schedule Your Email</h2>
@@ -173,8 +177,11 @@ const EmailReplyGenerator = () => {
           onClick={handleSchedule}
           disabled={!to || !subject || !scheduledTime || loading}
         >
-          {loading ? "Scheduling..." : "Schedule Email"}
+          {/* {loadingScheddule ? "Scheduling..." : "Schedule Email"} */}
+          Schedule email
         </button>
+
+      
 
         <button className={styles.backButton} onClick={handleBackButton}>
           Back

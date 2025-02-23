@@ -52,7 +52,7 @@
   font-size: 14px;
 }
 
-.backButton {
+.backHomeButton {
   width: 680px;
   height: 30px;
   margin-left: 17px;
@@ -61,6 +61,12 @@
   padding: 0.5rem;
   border: none;
   border-radius: 0.25rem;
+}
+
+.backHomeButton:hover{
+  color: white;
+  border: 1px solid #007bff;
+  background-color: #001a2e;
 }
 
 .button {
@@ -73,16 +79,19 @@
   font-weight: bold;
   transition: background-color 0.3s ease;
   margin-bottom: 15px;
+  color: black;
 }
 
 .button:hover {
-  background-color: #007bff;
+ color: white;
+  border: 1px solid #007bff;
+  background-color: #001a2e;
 }
 
-.button:disabled {
+/* .button:disabled {
   background-color: #555;
   cursor: not-allowed;
-}
+} */
 
 .error {
   color: red;
@@ -93,7 +102,7 @@
 .outputContainer {
   margin-top: 2rem;
   background-color: #112240;
-  width: 97%;
+  width: 100%;
 }
 
 .buttonGroup {
@@ -118,6 +127,8 @@
   border: 1px solid #007bff;
   border-radius: 0.25rem;
 }
+
+
 
 .scheduleContainer {
   margin-top: 2rem;
